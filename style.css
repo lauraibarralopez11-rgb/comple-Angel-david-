@@ -1,68 +1,150 @@
-<!DOCTYPE html>
-<html lang="es">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación Ángel David</title>
+html{
+scroll-behavior:smooth;
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
+body{
+font-family:Arial, sans-serif;
+overflow-x:hidden;
+}
 
-<body>
+/* PORTADA */
 
-    <!-- PRIMERA PÁGINA -->
-    <section id="portada">
+#portada{
 
-        <button id="abrir">
-            Abrir invitación
-        </button>
+width:100%;
+height:100vh;
 
-    </section>
+background:url("fondo.png") center center;
+background-size:cover;
 
-    <!-- SEGUNDA PÁGINA -->
-    <section id="segunda">
+display:flex;
+justify-content:center;
+align-items:flex-end;
 
-        <!-- GIF DE FONDO -->
-        <img src="segunda.gif" id="gifFondo" alt="Invitación">
+padding-bottom:320px;
 
-        <!-- BOTONES -->
-        <div class="overlay">
+}
 
-            <div class="botones">
+/* BOTÓN */
 
-                <a href="https://wa.me/573126195619?text=Hola,%20confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Ángel%20David.%20¡Nos%20vemos!"
-                    target="_blank"
-                    class="btn whatsapp">
-                    Confirmar WhatsApp
-                </a>
+#abrir{
 
-                <a href="https://maps.app.goo.gl/PHXae3BADZsVm11f8?g_st=ic"
-                    target="_blank"
-                    class="btn ubicacion">
-                    Ver ubicación
-                </a>
+background:#ff2d2d;
+color:#fff;
 
-            </div>
+border:none;
 
-        </div>
+padding:18px 35px;
 
-    </section>
+font-size:22px;
 
-    <!-- TERCERA PÁGINA -->
-    <section id="tercera">
+border-radius:60px;
 
-        <img src="tercera.gif" id="gifFinal" alt="Final">
+cursor:pointer;
 
-    </section>
+animation:latido 1.2s infinite;
 
-    <!-- MÚSICA -->
-    <audio id="musica" loop>
-        <source src="musica.mp3" type="audio/mpeg">
-    </audio>
+box-shadow:0 0 20px rgba(255,0,0,.5);
 
-    <script src="script.js"></script>
+}
 
-</body>
+@keyframes latido{
 
-</html>
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* SEGUNDA PÁGINA */
+
+/* SEGUNDA PÁGINA */
+
+#segunda{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:#000;
+}
+
+/* GIF */
+
+#gifFondo{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* CAPA DE BOTONES */
+
+.overlay{
+    position:absolute;
+    inset:0;
+    z-index:100;
+    pointer-events:none;
+}
+
+.botones{
+    position:absolute;
+    left:50%;
+    bottom:5px;
+    transform:translateX(-50%);
+    width:90%;
+    display:flex;
+    justify-content:space-between;
+    pointer-events:auto;
+}
+
+.btn{
+    width:46%;
+    height:50px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:0 8px;
+
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:18px;
+
+    color:#004AAD;
+}
+
+/* TERCERA PÁGINA */
+
+#tercera{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:#fff;
+}
+
+#gifFinal{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
